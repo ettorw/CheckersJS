@@ -1,23 +1,21 @@
 import React, { useState } from 'react';
 
-
-
 function Pieces(row, col){ 
 
-    const [position, setposition] = useState([
-        [0, 1, 0, 1, 0, 1, 0, 1],
-        [1, 0, 1, 0, 1, 0, 1, 0],
-        [0, 1, 0, 1, 0, 1, 0, 1],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [2, 0, 2, 0, 2, 0, 2, 0],
-        [0, 2, 0, 2, 0, 2, 0, 2],
-        [2, 0, 2, 0, 2, 0, 2, 0],
-    ])
+  const [position, setposition] = useState([
+    ['e', 'b', 'e', 'b', 'e', 'b', 'e', 'b'],
+    ['b', 'e', 'b', 'e', 'b', 'e', 'b', 'e'],
+    ['e', 'b', 'e', 'b', 'e', 'b', 'e', 'b'],
+    ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
+    ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
+    ['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e'],
+    ['e', 'w', 'e', 'w', 'e', 'w', 'e', 'w'],
+    ['w', 'e', 'w', 'e', 'w', 'e', 'w', 'e'],
+  ])
 
-    return(
-        <div className={(position[row][col] === 0) ? "noPiece" : ((position[row][col] === 1) ? "blackPiece" : "whitePiece")} key={"piece-" + row + "-" + col}></div>
-    )
+  return(
+    <div className={(position[row][col] === 'e') ? "noPiece" : ((position[row][col] === 'b') ? "blackPiece" : "whitePiece")} key={"piece-" + row + "-" + col}></div>
+  )
 }
 
 export default Pieces;

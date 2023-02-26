@@ -14,8 +14,7 @@
     justify-content: center;
     align-items: center;
     width: 12.5%;
-    height: 100%;
-    background-color: #999999;    
+    height: 100%;   
 }
 
 .blackSquare{
@@ -24,7 +23,6 @@
     align-items: center;
     width: 12.5%;
     height: 100%;
-    background-color: #111111;
 }
 
 .blackPiece{
