@@ -5,7 +5,7 @@ function App() {
     <>
     <h1 id="title">Checkers JS</h1>
     <div className="board-container">
-      {Board()}
+      <Board playerName={{white: "WhitePlayer", black: "BlackPlayer"}}></Board>
     </div>
     </>
   )
