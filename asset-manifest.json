@@ -1,16 +1,14 @@
 {
   "files": {
-    "main.css": "/CheckersJS/static/css/main.073c9b0a.css",
-    "main.js": "/CheckersJS/static/js/main.6b2f5de2.js",
-    "static/js/787.1cd38a41.chunk.js": "/CheckersJS/static/js/787.1cd38a41.chunk.js",
-    "static/media/logo.svg": "/CheckersJS/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/CheckersJS/static/css/main.9e6c14b4.css",
+    "main.js": "/CheckersJS/static/js/main.6810838b.js",
+    "static/media/IBMPlexSans-Regular.ttf": "/CheckersJS/static/media/IBMPlexSans-Regular.d77342fdcbcb6b3ce1b5.ttf",
     "index.html": "/CheckersJS/index.html",
-    "main.073c9b0a.css.map": "/CheckersJS/static/css/main.073c9b0a.css.map",
-    "main.6b2f5de2.js.map": "/CheckersJS/static/js/main.6b2f5de2.js.map",
-    "787.1cd38a41.chunk.js.map": "/CheckersJS/static/js/787.1cd38a41.chunk.js.map"
+    "main.9e6c14b4.css.map": "/CheckersJS/static/css/main.9e6c14b4.css.map",
+    "main.6810838b.js.map": "/CheckersJS/static/js/main.6810838b.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.6b2f5de2.js"
+    "static/css/main.9e6c14b4.css",
+    "static/js/main.6810838b.js"
   ]
 }
