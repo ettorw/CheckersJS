@@ -1,3 +1,5 @@
+// npm run deploy
+
 import React, { useState } from 'react';
 import '../styles/board.css';
 import Piece from './Piece.jsx';
@@ -19,6 +21,8 @@ function Board(props){
 
   const [clicked, setClicked] = useState({row: null, col: null});
 
+  const [turn, setTurn] = useState('w');
+
   function jump(row, col){
     let empty = position[row][col] === 'e';
     let byTwo = (Math.abs(clicked.row - row) === 2) && (Math.abs(clicked.col - col) === 2);
@@ -36,24 +40,44 @@ function Board(props){
     let byOne = (Math.abs(clicked.row - row) === 1) && (Math.abs(clicked.col - col) === 1);
     return byOne && empty;
   }
+
+  function executeMove(row, col){
+    let newPos = position.slice();
+    let piece = newPos[clicked.row][clicked.col];
+    newPos[row][col] = piece;
+    newPos[clicked.row][clicked.col] = 'e';
+    setPosition(newPos);
+    setTurn((piece === 'w') ? 'b' : 'w');
+  }
+
+  function executeJump(row, col){
+    let newPos = position.slice();
+    let piece = newPos[clicked.row][clicked.col];
+    newPos[row][col] = piece;
+    newPos[clicked.row][clicked.col] = 'e';
+    let jumpRow = (clicked.row + row) / 2;
+    let jumpCol = (clicked.col + col) / 2;
+    newPos[jumpRow][jumpCol] = 'e';
+    setPosition(newPos);
+    setTurn((piece === 'w') ? 'b' : 'w');
+  }
  
   function handleClick(row, col){
-    if (move(row, col)){
-      let newPos = position.slice();
-      let piece = newPos[clicked.row][clicked.col];
-      newPos[row][col] = piece;
-      newPos[clicked.row][clicked.col] = 'e';
-      setPosition(newPos);
+    if (clicked.row !== null){
+      
+      let piece = position[clicked.row][clicked.col];
+
+      if (piece === turn){
+        if (move(row, col)){
+          executeMove(row, col);
+        }
+        if (jump(row, col)){
+          executeJump(row, col);
+        }
+      }
     }
-    if (jump(row, col)){
-      let newPos = position.slice();
-      let piece = newPos[clicked.row][clicked.col];
-      newPos[row][col] = piece;
-      newPos[clicked.row][clicked.col] = 'e';
-      setPosition(newPos);
-    }
-    setClicked({row, col});
     
+    setClicked({row, col});
   }
 
   return (
